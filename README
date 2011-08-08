@@ -14,7 +14,7 @@
  * Last Update: August 8th, 2011
  ***********************************************************************/
  
- NOTE: *** 3rd PARTY LIBRARIES HAVE BEEN OBMITTED FROM THE PUBLIC REPO ***
+ NOTE: *** 3rd PARTY LIBRARIES HAVE BEEN OMITTED FROM THE PUBLIC REPO ***
  
  Libaries Omitted: OpenTok     http://www.tokbox.com
                     Socket.io   http://socket.io
