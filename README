@@ -6,11 +6,11 @@
  *
  * Title:       TriviaTok      http://triviatok.opentok.com
  * Description: Trivia social game based around the game mechanics 
- *				of the popular tv show "Who Wants To Be A 
- *				Millionaire", featuring the OpenTok & Twilio API's.
+ *              of the popular tv show "Who Wants To Be A 
+ *              Millionaire", featuring the OpenTok & Twilio API's.
  *
- * Tech:		AJAX, CSS, CSS3, HTML, JavaScript, JSON, jQuery, 
- *				MySQL, Node.js, OpenTok API, PHP, Socket.io, Twilio API
+ * Tech:        AJAX, CSS, CSS3, HTML, JavaScript, JSON, jQuery, 
+ *              MySQL, Node.js, OpenTok API, PHP, Socket.io, Twilio API
  * Last Update: August 8th, 2011
  ***********************************************************************/
  
