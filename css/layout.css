@@ -1,0 +1,491 @@
+@CHARSET "UTF-8";
+/*
+ * Project: TriviaTok
+ * Description: Video-based trivia game showcasing the OpenTok API and crowdsourced questions
+ * 
+ * Author: Ezra Velazquez
+ * Website: http://ezraezraezra.com
+ * Date: August 2011
+ */
+@font-face {
+	font-family: Folk;
+	src: url('../assets/Folksolid-webfont.ttf');
+}
+.actual_question_class {
+	width: 480px;
+	height: 50px;
+	background-color: #E88801;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	border: 2px solid #730046;
+	border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+body {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	background-color: #DCDCDC;
+}
+#body_container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#call:hover {
+	background-color: #730046;
+	color: #DCDCDC;
+}
+.camera_container {
+	width: 320px;
+	height: 240px;
+	position: relative;
+	top: 30px;
+}
+#camera_guest_container {
+	float: right;
+	right: 50px;
+	background-color: black;
+}
+#camera_host_container {
+	float: left;
+	left: 50px;
+	background-color: black;
+}
+#correct_answer {
+	width: 50px;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 75px;
+	font-weight: bold;
+	position: relative;
+	float: right;
+	line-height: 69px;
+}
+#correct_answer_container {
+	width: 170px;
+	height: 50px;
+	position: relative;
+	float: left;
+	top: 15px;
+}
+#correct_answer_title {
+	position: relative;
+	float:left;
+	width: 110px;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 30px;
+}
+.game_recap_buttons {
+	top: 50px;
+	width: 200px;
+	position: relative;
+	height: 75px;
+	float:left;
+	background-color: #BFBB11;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 5px;
+	border: 2px solid #730046;
+	border-radius: 15px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	line-height: 75px;
+}
+#game_recap_container {
+	width: 900px;
+	height: 556px;
+	position: relative;
+	border-radius: 15px;
+	background-color: #FFC200;
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	z-index: 15;
+}
+#game_recap_facebook {
+	float:right;
+	transition: background-color 0.5s, color 0.5s;
+	-moz-transition: background-color 0.5s, color 0.5s;
+	-webkit-transition: background-color 0.5s, color 0.5s;
+	-o-transition: background-color 0.5s, color 0.5s;
+}
+#game_recap_facebook:hover {
+	background-color: #730046;
+	color: #DCDCDC;
+}
+#game_recap_header {
+	width: 900px;
+	position: relative;
+	text-align: center;
+	font-size: 60px;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	top: 20px;
+}
+#game_recap_score_container {
+	width: 900px;
+	position: relative;
+	top: 50px;
+	text-align: center;
+	font-size: 200px;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+}
+#game_recap_social_container {
+	width: 505px;
+	position: relative;
+	top: 15px;
+	height: 135px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+#game_recap_twitter {
+	transition: background-color 0.5s, color 0.5s;
+	-moz-transition: background-color 0.5s, color 0.5s;
+	-webkit-transition: background-color 0.5s, color 0.5s;
+	-o-transition: background-color 0.5s, color 0.5s;
+}
+#game_recap_twitter:hover {
+	background-color: #730046;
+	color: #DCDCDC;
+}
+#game_title {
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+	font-size: 96px;
+	text-align: center;
+	color: #BFBB11;
+}
+#gameshow_bottom_container {
+	width: 900px;
+	height: 256px;
+	position: relative;
+}
+#gameshow_bottom_left {
+	width: 280px;
+	height: 256px;
+	position: relative;
+	float: left;
+}
+#gameshow_bottom_right {
+	width: 600px;
+	height: 256px;
+	position: relative;
+	float: left;
+}
+#gameshow_container {
+	width: 900px;
+	height: 556px;
+	position: relative;
+	border: 20px solid #730046;
+	background-color: #730046;
+	border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+}
+#gameshow_container_inner {
+	width: 900px;
+	height: 556px;
+	position: relative;
+	border-radius: 15px;
+	background-color: #FFC200;
+	display: block;
+}
+#gameshow_top_container {
+	width: 900px;
+	height: 300px;
+	position: relative;
+}
+#help_container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+	z-index: 5;
+	float: right;
+	display: block;
+	background-color: #FFC200;
+}
+.help_container_choices {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	float: left;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	cursor: pointer;
+}
+#help_container_title {
+	font-size: 46px;
+	line-height: 38px;
+	padding-top: 15px;
+	height: 85px;
+}
+#help_container_audience {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -701px;
+}
+#help_container_audience_normal {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -300px;
+}
+#help_container_audience_hover {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -200px;
+	opacity: 1;
+	-webkit-transition: opacity 1s;
+}
+#help_container_audience_hover:hover {
+	opacity: 0;
+}
+#help_container_computer {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -800px;
+}
+#help_container_computer_normal {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -500px;
+}
+#help_container_computer_hover {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -400px;
+	opacity: 1;
+	-webkit-transition: opacity 1s;
+}
+#help_container_computer_hover:hover {
+	opacity: 0;
+}
+#help_container_phone {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -600px;
+}
+#help_container_phone_normal {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px -100px;
+}
+#help_container_phone_hover {
+	width: 100px;
+	height: 100px;
+	background: url('../assets/help_sprite.png') no-repeat 0px 0px;
+	opacity: 1;
+	-webkit-transition: opacity 1s;
+}
+#help_container_phone_hover:hover {
+	opacity: 0;
+}
+#h_c_c_t {
+	font-size: 62px;
+	line-height: 47px;
+	position: relative;
+}
+#log {
+	width: 200px;
+	height: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	position: relative;
+	top: 10px;
+}
+#modal_container{
+	width: 100%;
+	height: 100%;
+	background-color: green;
+	z-index: 999999999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: visible;
+}
+#number {
+	width: 166px;
+	top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 20px;
+	border-radius: 5px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 5px;
+	position: relative;
+	left: 10px;
+	outline: none
+}
+
+
+#possible_solutions {
+	width: 500px;
+	height: 150px;
+	top: 30px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+.question_holder {
+	width: 220px;
+	height: 40px;
+	background-color: #BFBB11;
+	position: relative;
+	float: left;
+	border: 2px solid #730046;
+	border-radius: 15px;
+	padding: 10px;
+	cursor:  pointer;
+}
+#questions_correct_container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 104px;
+	float: left;
+	height: 158px;
+	left: 77px;
+	top: 112px;
+}
+#questions_correct_title {
+	position: relative;
+	width: 104px;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	top: 5px;
+}
+.score {
+	width: 20px;
+	height: 20px;
+	margin: 2px;
+	border: 1px solid #730046;
+	border-radius: 5px;
+	float: left;
+	text-align: center;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 22px;
+}
+#solution_1_container {
+	margin-left: 10px;
+}
+#solution_3_container {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#solution_2_container {
+	margin-top: 10px;
+}
+.solution_left {
+	position: relative;
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-top: 0px;
+	font-size: 42px;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+}
+.solution_right {
+	position: relative;
+	float: right;
+	width: 160px;
+	height: 40px;
+	text-align: center;
+}
+
+#solution_0_container {
+	-webkit-transition: background-color .5s, color .5s;
+}
+
+#solution_1_container {
+	-webkit-transition: background-color .5s, color .5s;
+}
+#solution_2_container {
+	-webkit-transition: background-color .5s, color .5s;
+}
+#solution_3_container {
+	-webkit-transition: background-color .5s, color .5s;
+}
+
+
+#twilio_container {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	z-index: 10;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+	right: 0px;
+	display: none;
+	background-color: #E88801;
+	border: 2px solid #730046;
+	border-radius: 15px;
+}
+#call {
+	width: 170px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 56x;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: center;
+	background-color: #BFBB11;
+	font-family: Folk, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height: 45px;
+	border: 2px solid #730046;
+	transition: background-color 0.5s, color 0.5s;
+	-moz-transition: background-color 0.5s, color 0.5s;
+	-webkit-transition: background-color 0.5s, color 0.5s;
+	-o-transition: background-color 0.5s, color 0.5s;
+	position: relative;
+	top: 30px;
+}
+
+
+
+#twilio_timer {
+	width: 200px;
+	height: 21px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	position: relative;
+	top: 0px;
+}
