@@ -1,10 +1,12 @@
 /*
- * Project: TriviaTok
+ * Project:     TriviaTok
  * Description: Video-based trivia game showcasing the OpenTok API and crowdsourced questions
+ * Website:     http://triviatok.opentok.com
  * 
- * Author: Ezra Velazquez
- * Website: http://ezraezraezra.com
- * Date: August 2011
+ * Author:      Ezra Velazquez
+ * Website:     http://ezraezraezra.com
+ * Date:        August 2011
+ * 
  */
 var io = require('socket.io').listen(8004);
 var host_id = "";

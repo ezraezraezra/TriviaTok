@@ -2,14 +2,15 @@
 include 'library/Services/Twilio/Capability.php';
 include 'library/sdk/OpenTokSDK.php';
 /*
- * Project: TriviaTok
+ * Project:     TriviaTok
  * Description: Video-based trivia game showcasing the OpenTok API and crowdsourced questions
+ * Website:     http://triviatok.opentok.com
  * 
- * Author: Ezra Velazquez
- * Website: http://ezraezraezra.com
- * Date: August 2011
+ * Author:      Ezra Velazquez
+ * Website:     http://ezraezraezra.com
+ * Date:        August 2011
  * 
- * Notes: Beetle Bus goes Jamba Juice, 1435983
+ * Notes:       Beetle Bus goes Jamba Juice, 1435983
  */
 
 // App setup

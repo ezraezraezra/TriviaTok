@@ -4,10 +4,12 @@ require "info.php";
 /*
  * Project: TriviaTok
  * Description: Video-based trivia game showcasing the OpenTok API and crowdsourced questions
+ * Website:     http://triviatok.opentok.com
  * 
  * Author: Ezra Velazquez
  * Website: http://ezraezraezra.com
  * Date: August 2011
+ * 
  */
 $comm = $_GET['comm'];
 

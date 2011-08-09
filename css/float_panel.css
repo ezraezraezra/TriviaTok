@@ -1,4 +1,14 @@
 @CHARSET "UTF-8";
+/*
+ * Project:     TriviaTok
+ * Description: Video-based trivia game showcasing the OpenTok API and crowdsourced questions
+ * Website:     http://triviatok.opentok.com
+ * 
+ * Author:      Ezra Velazquez
+ * Website:     http://ezraezraezra.com
+ * Date:        August 2011
+ * 
+ */
 .admin_buttons {
 	width: 100px;
 	height: 75px;
